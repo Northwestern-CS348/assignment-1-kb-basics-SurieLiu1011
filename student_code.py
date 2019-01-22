@@ -50,7 +50,7 @@ class KnowledgeBase(object):
             ListOfBindings|False - ListOfBindings if result found, False otherwise
         """
         print("Asking {!r}".format(fact))
-        ListOfBindings = []
+        ListOfBinding = ListOfBindings()
         for i in range(0,len(self.facts)):
             #print(len(self.facts))
             #print(type(facts))
@@ -60,10 +60,10 @@ class KnowledgeBase(object):
             #print(self.facts[i].statement.terms)
             #print(i)
             if answer != False:
-               ListOfBindings.append(answer)
-        if len(ListOfBindings) == 0:
+               ListOfBinding.add_bindings(answer)
+        if len(ListOfBinding) == 0:
             return False
-        return ListOfBindings
+        return ListOfBinding
 
 
 
